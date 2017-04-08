@@ -3,10 +3,10 @@ import {
     AppRegistry
 } from 'react-native';
 
-import Header from './src/components/header';
+import App from './src/components/app';
 
-const App = () => (
-    <Header headerText={'Albums!!!'} />
+const AlbumApplication = () => (
+    <App />
 );
 
-AppRegistry.registerComponent('albums', () => App);
+AppRegistry.registerComponent('albums', () => AlbumApplication);
