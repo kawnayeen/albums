@@ -2,7 +2,7 @@
  * Created by kawnayeen on 4/8/17.
  */
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import AlbumDetails from './album.details';
 
 class AlbumList extends Component {
@@ -23,9 +23,9 @@ class AlbumList extends Component {
         console.log(this.state);
 
         return (
-            <View>
+            <ScrollView>
                 {this.renderAlbums()}
-            </View>
+            </ScrollView>
         );
     }
 }

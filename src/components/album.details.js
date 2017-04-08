@@ -2,9 +2,14 @@
  * Created by kawnayeen on 4/8/17.
  */
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Button } from 'react-native';
 import Card from './card';
 import CardSection from './card.section';
+
+
+const onButtonPress = () => {
+    console.log('Button Pressed');
+};
 
 const AlbumDetails = ({ album }) => (
     <Card>
@@ -19,6 +24,15 @@ const AlbumDetails = ({ album }) => (
         </CardSection>
         <CardSection>
             <Image style={styles.coverImageStyle} source={{ uri: album.image }} />
+        </CardSection>
+        <CardSection>
+            <View style={styles.buttonStyle}>
+                <Button
+                    onPress={onButtonPress}
+                    title="Press Me"
+                    accessibilityLabel="See an informative alert"
+                />
+            </View>
         </CardSection>
     </Card>
 );
@@ -45,6 +59,16 @@ const styles = {
         height: 300,
         flex: 1,
         width: null
+    },
+    buttonStyle: {
+        flex: 1,
+        alignSelf: 'stretch',
+        backgroundColor: '#fff',
+        borderRadius: 2,
+        borderWidth: 1,
+        borderColor: '#007aff',
+        marginLeft: 5,
+        marginRight: 5
     }
 };
 
