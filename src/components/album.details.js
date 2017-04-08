@@ -2,14 +2,14 @@
  * Created by kawnayeen on 4/8/17.
  */
 import React from 'react';
-import { Text, View, Image, Button } from 'react-native';
+import { Text, View, Image, Button, Linking } from 'react-native';
 import Card from './card';
 import CardSection from './card.section';
 
 
-const onButtonPress = () => {
-    console.log('Button Pressed');
-};
+function onButtonPress(url) {
+    Linking.openURL(url);
+}
 
 const AlbumDetails = ({ album }) => (
     <Card>
@@ -28,8 +28,8 @@ const AlbumDetails = ({ album }) => (
         <CardSection>
             <View style={styles.buttonStyle}>
                 <Button
-                    onPress={onButtonPress}
-                    title="Press Me"
+                    onPress={() => onButtonPress(album.url)}
+                    title="Buy Now"
                     accessibilityLabel="See an informative alert"
                 />
             </View>
